@@ -510,7 +510,7 @@ it('Вводим номер телефона не полностью', () => {
 
 		Form.elements.Input_Text()
 		.type('Выгодные условия кредитования')
-		.should('have.value', 'Выгодные условия кредитования')
+		.should('have.value', 'Выгодные условия кредитования1')
 
 		Form.elements.Next_Btn()
 		.should('be.enabled')
