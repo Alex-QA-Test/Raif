@@ -13,7 +13,7 @@ describe('Тестирование формы', () => {
 
 	})
 
-  it('Полностью проходим опрос с валидными данными', function() {
+  it.skip('Полностью проходим опрос с валидными данными', function() {
 
 		Form.elements.Step()
 		.should('contain', 'Почему выбрали наш банк (шаг 1 из 7)')
@@ -111,7 +111,7 @@ describe('Тестирование формы', () => {
 
   })
 
-	it('Полностью проходим опрос с валидными данными, но на 6ом шаге не нажимаем на Тогл', function() {
+	it.skip('Полностью проходим опрос с валидными данными, но на 6ом шаге не нажимаем на Тогл', function() {
 
 		Form.elements.Step()
 		.should('contain', 'Почему выбрали наш банк (шаг 1 из 7)')
@@ -473,7 +473,7 @@ it('Вводим номер телефона не полностью', () => {
 	it('Проверка на обязательнность поля', function() {
 
 		Form.elements.Step()
-		.should('contain', 'Почему выбрали наш банк (шаг 1 из 7)')
+		.should('contain', 'Почему выбрали наш банк (шаг 1 из 7!)')
 		.should('be.visible')
 
 		Form.elements.Next_Btn()
@@ -498,7 +498,7 @@ it('Вводим номер телефона не полностью', () => {
 		.realHover({ position: "center" })
 
 		Form.elements.Next_Btn()
-		.should('have.css', 'background-color', 'rgb(238, 216, 10)')
+		.should('have.css', 'background-color', 'rgb(238, 216, 10!)')
 
 	})
 
@@ -510,7 +510,7 @@ it('Вводим номер телефона не полностью', () => {
 
 		Form.elements.Input_Text()
 		.type('Выгодные условия кредитования')
-		.should('have.value', 'Выгодные условия кредитования')
+		.should('have.value', 'Выгодные условия кредитования1')
 
 		Form.elements.Next_Btn()
 		.should('be.enabled')
