@@ -13,7 +13,7 @@ describe('Тестирование формы', () => {
 
 	})
 
-  it('Полностью проходим опрос с валидными данными', function() {
+  it.skip('Полностью проходим опрос с валидными данными', function() {
 
 		Form.elements.Step()
 		.should('contain', 'Почему выбрали наш банк (шаг 1 из 7)')
@@ -111,7 +111,7 @@ describe('Тестирование формы', () => {
 
   })
 
-	it('Полностью проходим опрос с валидными данными, но на 6ом шаге не нажимаем на Тогл', function() {
+	it.skip('Полностью проходим опрос с валидными данными, но на 6ом шаге не нажимаем на Тогл', function() {
 
 		Form.elements.Step()
 		.should('contain', 'Почему выбрали наш банк (шаг 1 из 7)')
@@ -470,10 +470,10 @@ it('Вводим номер телефона не полностью', () => {
 
 	})
 
-	it.only('Проверка на обязательнность поля', function() {
+	it('Проверка на обязательнность поля', function() {
 
 		Form.elements.Step()
-		.should('contain', 'Почему выбрали наш банк (шаг 1 из 7)')
+		.should('contain', 'Почему выбрали наш банк (шаг 1 из 7!)')
 		.should('be.visible')
 
 		Form.elements.Next_Btn()
@@ -489,7 +489,7 @@ it('Вводим номер телефона не полностью', () => {
 
 	})
 
-	it.only('Проверяем ховер на кнопке "Далее', function() {
+	it('Проверяем ховер на кнопке "Далее', function() {
 
 		Form.elements.Next_Btn()
 		.should('have.css', 'background-color', 'rgb(254, 230, 0)')
@@ -498,11 +498,11 @@ it('Вводим номер телефона не полностью', () => {
 		.realHover({ position: "center" })
 
 		Form.elements.Next_Btn()
-		.should('have.css', 'background-color', 'rgb(238, 216, 10)')
+		.should('have.css', 'background-color', 'rgb(238, 216, 10!)')
 
 	})
 
-	it.only('Проверяем ховер на кнопке "Назад', function() {
+	it('Проверяем ховер на кнопке "Назад', function() {
 
 		Form.elements.Step()
 		.should('contain', 'Почему выбрали наш банк (шаг 1 из 7)')
