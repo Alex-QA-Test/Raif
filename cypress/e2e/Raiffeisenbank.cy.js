@@ -473,7 +473,7 @@ it('Вводим номер телефона не полностью', () => {
 	it('Проверка на обязательнность поля', function() {
 
 		Form.elements.Step()
-		.should('contain', 'Почему выбрали наш банк (шаг 1 из 7!)')
+		.should('contain', 'Почему выбрали наш банк (шаг 1 из 7)')
 		.should('be.visible')
 
 		Form.elements.Next_Btn()
