@@ -24,7 +24,7 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-                  ref: allure
+                  ref: Allure-History
                   path: allure
           
       - name: Generate Allure Report
