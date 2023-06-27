@@ -489,7 +489,7 @@ it('Вводим номер телефона не полностью', () => {
 
 	})
 
-	it('Проверяем ховер на кнопке "Далее', function() {
+	it.only('Проверяем ховер на кнопке "Далее', function() {
 
 		Form.elements.Next_Btn()
 		.should('have.css', 'background-color', 'rgb(254, 230, 0)')
@@ -505,7 +505,7 @@ it('Вводим номер телефона не полностью', () => {
 	it.only('Проверяем ховер на кнопке "Назад', function() {
 
 		Form.elements.Step()
-		.should('contain', 'Почему выбрали наш банк (шаг 1 из 7)')
+		.should('contain', 'Почему выбрали наш банк (шаг 1 из 71)')
 		.and('be.visible')
 
 		Form.elements.Input_Text()
