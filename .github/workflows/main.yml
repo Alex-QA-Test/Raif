@@ -19,25 +19,40 @@ jobs:
         run: npm run ui-regression-allure
         continue-on-error: true
           
+      - name: Generate Report
+        if: always()
+        run: npx allure generate allure-results --clean    
+        
+      - name: Publishing Allure artifact to Github Actions
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+              name: allure-report
+              path: allure-report/
+              
       - name: Get Allure history
         uses: actions/checkout@v3
         if: always()
         continue-on-error: true
         with:
-          ref: gh-pages
-          path: gh-pages
-          
-      - name: Generate Allure Report
+             ref: gh-pages
+             path: gh-pages     
+             
+      - name: Test marketplace action
         uses: simple-elf/allure-report-action@master
         if: always()
+        id: allure-report
         with:
-          allure_results: allure-results
-          allure_history: allure-history
-          keep_reports: 20
-
-      - name: Publish report
+             allure_results: allure-results
+             gh_pages: gh-pages
+             allure_report: allure-report
+             allure_history: allure-history
+             keep_reports: 20
+             
+      - name: Deploy report to Github Pages
+        if: always()
         uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-history
+        env:
+             PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+             PUBLISH_BRANCH: gh-pages
+             PUBLISH_DIR: allure-history
