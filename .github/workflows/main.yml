@@ -5,35 +5,39 @@ permissions:
   contents: write
 
 jobs:
-  cypress-run:
+  test:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
 
       - name: Run tests
         run: npm run ui-regression-allure
         continue-on-error: true
-
+          
       - name: Get Allure history
         uses: actions/checkout@v3
         if: always()
         continue-on-error: true
         with:
-          ref: allure
-          path: allure
-
+          ref: allure-results
+          path: gh-pages
+          
       - name: Generate Allure Report
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
           allure_results: allure-results
-          gh_pages: allure
+          allure_history: allure-history
+          keep_reports: 20
 
-      - name: Deploy report to Github Pages
-        if: always()
+      - name: Publish report
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: allure
-          publish_dir: allure-history
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
