@@ -24,7 +24,7 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-          ref: allure-history
+          ref: allure-history/
           path: gh-pages
           
       - name: Generate Allure Report
