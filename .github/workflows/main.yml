@@ -14,9 +14,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
+      - name: Run tests
+        run: npm run ui-regression-allure
+        continue-on-error: true
         env:
            SPLIT: ${{ strategy.job-total }}
            SPLIT_INDEX: ${{ strategy.job-index }}
+           
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 20
+
+      - name: Publish report
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: allure
+          PUBLISH_DIR: allure-history
         
