@@ -26,13 +26,7 @@ jobs:
            SPLIT: ${{ strategy.job-total }}
            SPLIT_INDEX: ${{ strategy.job-index }}
            
-      - name: Get Allure history
-        uses: actions/checkout@v3
-        if: always()
-        continue-on-error: true
-        with:
-          ref: allure
-          path: allure
+      
            
       - name: Generate Allure Report
         uses: simple-elf/allure-report-action@master
@@ -46,6 +40,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: allure
+          PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
         
