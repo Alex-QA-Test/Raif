@@ -1,43 +1,8 @@
-name: CI
-
+name: ci
 on: [push]
-permissions:
-  contents: write
-
 jobs:
   test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm run ui-regression-allure
-        continue-on-error: true
-          
-      - name: Get Allure history
-        uses: actions/checkout@v3
-        if: always()
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
-          
-      - name: Generate Allure Report
-        uses: simple-elf/allure-report-action@master
-        if: always()
-        with:
-          allure_results: allure-results
-          allure_history: allure-history
-          keep_reports: 20
-
-      - name: Publish report
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-history
+    # https://github.com/bahmutov/cypress-workflows
+    uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v1
+    with:
+      n: 4
