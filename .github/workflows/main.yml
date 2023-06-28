@@ -1,6 +1,8 @@
 name: Parallel Cypress Tests
 
 on: [push]
+permissions:
+  contents: write
 
 jobs:
   test:
