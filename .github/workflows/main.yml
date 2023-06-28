@@ -16,6 +16,7 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
-        with:
-          parallel: true
+        env:
+           SPLIT: ${{ strategy.job-total }}
+           SPLIT_INDEX: ${{ strategy.job-index }}
         
