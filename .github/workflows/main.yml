@@ -48,5 +48,4 @@ jobs:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
-          error_count: "30"
         
