@@ -2,7 +2,8 @@
   "scripts": {
   
     "ui-regression-allure": "cypress run --browser chrome --spec cypress/e2e/**.js --env allure=true",
-    "allure:report": "allure generate allure-results --clean -o allure-report && allure open"
+    "allure:report": "allure generate allure-results --clean -o allure-report && allure open",
+     "allure": ""
 
   },
   "dependencies": {
