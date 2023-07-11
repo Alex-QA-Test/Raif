@@ -1,4 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Jul 11 19:09:18 GMT 2023","Tue Jul 11 19:09:20 GMT 2023","1808","","Тестирование формы","","","","Проверка на обязательнность поля",""
-"passed","Tue Jul 11 19:09:20 GMT 2023","Tue Jul 11 19:09:21 GMT 2023","755","","Тестирование формы","","","","Проверяем ховер на кнопке ""Далее",""
-"failed","Tue Jul 11 19:09:21 GMT 2023","Tue Jul 11 19:09:26 GMT 2023","4620","","Тестирование формы","","","","Проверяем ховер на кнопке ""Назад",""
