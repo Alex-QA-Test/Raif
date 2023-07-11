@@ -1,0 +1,1 @@
+[{"uid":"a7924be9e4ce3e73","name":"Проверяем ховер на кнопке \"Далее","time":{"start":1689105378242,"stop":1689105379026,"duration":784},"status":"passed","severity":"normal"},{"uid":"8c2fc86d40b4a22a","name":"Проверка на обязательнность поля","time":{"start":1689105376511,"stop":1689105378214,"duration":1703},"status":"passed","severity":"normal"}]
