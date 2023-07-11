@@ -489,7 +489,7 @@ it('Вводим номер телефона не полностью', () => {
 
 	})
 
-	it.only('Проверяем ховер на кнопке "Далее', function() {
+	it('Проверяем ховер на кнопке "Далее', function() {
 
 		Form.elements.Next_Btn()
 		.should('have.css', 'background-color', 'rgb(254, 230, 0)')
