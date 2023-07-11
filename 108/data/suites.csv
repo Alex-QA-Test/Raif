@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Tue Jul 11 19:18:51 GMT 2023","Tue Jul 11 19:18:56 GMT 2023","4774","","Тестирование формы","","","","Проверяем ховер на кнопке ""Назад",""
+"passed","Tue Jul 11 19:18:49 GMT 2023","Tue Jul 11 19:18:51 GMT 2023","1996","","Тестирование формы","","","","Проверяем ховер на кнопке ""Далее",""

@@ -1,0 +1,1 @@
+[{"uid":"3649697e3ea90cd2","name":"Проверяем ховер на кнопке \"Назад","time":{"start":1689103131548,"stop":1689103136322,"duration":4774},"status":"failed","severity":"normal"},{"uid":"20538068d6c3c4a2","name":"Проверяем ховер на кнопке \"Далее","time":{"start":1689103129526,"stop":1689103131522,"duration":1996},"status":"passed","severity":"normal"}]
