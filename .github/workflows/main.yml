@@ -33,5 +33,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
+          PUBLISH_BRANCH: allure
           PUBLISH_DIR: allure-history
