@@ -1,22 +1,10 @@
-name: Parallel Cypress Tests
-
+name: ci
 on: [push]
-
 jobs:
   test:
-    name: Cypress run
-    runs-on: ubuntu-22.04
-    strategy:
-      fail-fast: false
-      matrix:
-        containers: [1, 2, 3, 4]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name:  npx cypress run --record --key 9ed6da91-f34c-4d6b-9e64-a83e2501b2fb
-        uses: cypress-io/github-action@v5
-        with:
-          record: true
-          parallel: true
-        
+    # https://github.com/bahmutov/cypress-workflows
+    uses: bahmutov/cypress-workflows/.github/workflows/parallel.yml@v1
+    with:
+      n: 4
+    secrets:
+      recordKey: ${{ secrets.CYPRESS_RECORD_KEY }}
