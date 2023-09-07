@@ -7,4 +7,4 @@ jobs:
     with:
       n: 4
     secrets:
-      recordKey: ${{ secrets.CYPRESS_RECORD_KEY }}
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
