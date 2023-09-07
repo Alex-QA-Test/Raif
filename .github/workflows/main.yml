@@ -1,21 +1,10 @@
-name: Parallel Cypress Tests
-
+name: ci
 on: [push]
-
 jobs:
   test:
-    name: Cypress run
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run Cypress tests
-        run: npx cypress run --record CYPRESS_RECORD_KEY
-        
-        env:
-          # pass the Cypress Cloud record key as an environment variable
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+    # https://github.com/bahmutov/cypress-workflows
+    uses: bahmutov/cypress-workflows/.github/workflows/parallel.yml@v1
+    with:
+      n: 4
+    secrets:
+      recordKey: ${{ secrets.CYPRESS_RECORD_KEY }}
