@@ -3,6 +3,7 @@ const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 const cypressSplit = require('cypress-split')
 
 module.exports = defineConfig({
+  projectId: "bbhs8n",
   e2e: {
     setupNodeEvents(on, config) {
       allureWriter(on, config);
