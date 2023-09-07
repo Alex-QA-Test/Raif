@@ -14,7 +14,7 @@ jobs:
         run: npm install
 
       - name: Run Cypress tests
-        run: npx cypress run --record
+        run: npx cypress run --record CYPRESS_RECORD_KEY
         
         env:
           # pass the Cypress Cloud record key as an environment variable
